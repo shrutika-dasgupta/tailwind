@@ -151,7 +151,7 @@ class Restro extends Eloquent
 	
 	public function getData()
 	{
-		$results = Restro::orderBy('rating','DESC')->get();
+		$results = Restro::orderBy('distance')->get();
 
 		return $results;
 	}
