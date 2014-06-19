@@ -15,9 +15,10 @@ class HomeController extends BaseController {
 	|
 	*/
 
-	public function showWelcome()
+	public function goContext()
 	{
-		return View::make('hello');
+		//if (yes)
+		// go to Content discovery;
 	}
 
 }
