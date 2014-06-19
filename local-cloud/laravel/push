@@ -1,0 +1,127 @@
+#!/bin/bash
+
+if [ ! -f build/deploy/hosts ]; then
+    printf "%b\n" "$RED You need to create the hosts file (build/deploy/hosts)$WHITE"
+    exit
+fi
+
+if [ ! -f build/deploy/config ]; then
+    printf "%b\n" "$RED Please run ./install {NAME} before trying to push, yo$WHITE"
+    exit
+fi
+
+source build/deploy/hosts
+source build/deploy/config
+source build/deploy/color
+
+
+# Pushing to a single Repo
+# push fe prod master
+# ------------------------
+if [ $3 ]
+
+then
+
+    SERVER=$1
+    REPO=$2
+    BRANCH=$3
+
+    # Find the IP address of the server
+    # ---------------------------------
+    for i in "${IPS[@]}"
+
+    do
+        server=${i%%:*}
+
+        if [ "$SERVER" == "$server" ]
+        then
+
+            IP=${i#*:}
+            break
+
+        fi
+
+    done
+
+
+    # Find the git repo of the Server
+    # -------------------------------
+    for i in "${REPOS[@]}"
+
+    do
+        repo=${i%%:*}
+
+        if [ "$REPO" == "$repo" ]
+        then
+
+            REMOTE_REPO=${i#*:}
+            break
+
+        fi
+
+    done
+
+    # Push to the git repo
+    # -------------------------------
+    if [ $REMOTE_REPO -a "$IP" ]
+    then
+
+        source build/deploy/ssh_push
+
+    else
+        if [ -z $IP ]
+        then
+            printf "%b\n" "$RED Uh oh, $SERVER doesn't have an associated $BOLD IP address $NORMAL$WHITE"
+        fi
+
+        if [ -z $REMOTE_REPO ]
+        then
+            printf "%b\n" "$RED Shucks, $REPO doesn't have an associated $BOLD repository $NORMAL$WHITE"
+        fi
+
+    fi
+
+else
+
+    if [ $2 ]
+    then
+
+        REPO=$1
+        BRANCH=$2
+
+        # Iterate through all the servers
+        # ---------------------------------
+        for i in "${IPS[@]}"
+
+        do
+            SERVER=${i%%:*}
+            IP=${i#*:}
+
+            # Find the git repo of the Server
+            # -------------------------------
+            for i in "${REPOS[@]}"
+
+            do
+                repo=${i%%:*}
+
+                if [ "$REPO" == "$repo" ]
+                then
+
+                    REMOTE_REPO=${i#*:}
+                    source build/deploy/ssh_push
+                    break
+
+                fi
+
+            done
+
+        done
+
+    else
+
+        printf "%b\n" "$RED Hmm, I need the location and branch"
+        printf "%b\n" " So if you want to push the master branch to prod"
+        printf "%b\n" " ./push fe prod master $WHITE"
+
+    fi
+fi

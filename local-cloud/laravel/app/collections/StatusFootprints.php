@@ -1,0 +1,23 @@
+<?php
+
+/**
+ * Collection of StatusFootprints
+ *
+ * @author Alex
+ */
+class StatusFootprints extends DBCollection
+{
+    public $table = 'status_footprint';
+
+    public
+        $user_id,
+        $track_type,
+        $last_run;
+
+    public $columns = array(
+        'user_id',
+        'track_type',
+        'last_run'
+    );
+    public $primary_keys = array('user_id');
+}

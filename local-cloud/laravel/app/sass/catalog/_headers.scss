@@ -1,0 +1,21 @@
+@mixin highlight {
+
+  font-family: 'pacificoregular';
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-weight: 300;
+  text-shadow: 1px 1px 1px rgba(255,255,255,0.8);
+}
+
+h1 {
+  font-size:emCalc(44px);
+}
+
+h2 {
+
+}
+
+.highlight {
+  @include highlight;
+}

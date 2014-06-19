@@ -1,0 +1,193 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Deployment &mdash; Tailwind 0.1 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:'../',
+        VERSION:'0.1',
+        COLLAPSE_INDEX:false,
+        FILE_SUFFIX:'.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+    <link rel="top" title="Tailwind 0.1 documentation" href="../index.html"/>
+        <link rel="up" title="Analytics Codebase" href="index.html"/>
+        <link rel="next" title="Documentation" href="docs.html"/>
+        <link rel="prev" title="Installation" href="installation.html"/> 
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="../index.html" class="icon icon-home"> Tailwind</a>
+        <form class="wy-form" action="../search.html" method="get">
+  <input type="text" name="q" placeholder="Search docs" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix">
+        
+        
+            <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Analytics Codebase</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="intro.html">Tailwind Analytics [Github]</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Deployment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs.html">Documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../troubleshooting_faq.html">Troubleshooting FAQ&#8217;s</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../troubleshooting_faq.html#server-issues">Server Issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../troubleshooting_faq.html#database-issues">Database Issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../troubleshooting_faq.html#deployment-issues">Deployment Issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../troubleshooting_faq.html#composer-issues">Composer Issues</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top">
+        <i data-toggle="wy-nav-top" class="icon icon-reorder"></i>
+        <a href="/">Tailwind</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <ul class="wy-breadcrumbs">
+  <li><a href="../index.html">Docs</a> &raquo;</li>
+  <li><a href="">Deployment</a></li>
+  
+</ul>
+<hr/>
+
+          
+  <div class="section" id="deployment">
+<h1>Deployment<a class="headerlink" href="#deployment" title="Permalink to this headline">¶</a></h1>
+<p>We use git to deploy to Rackspace servers, run off of a bash script. Each application
+has it&#8217;s own remote in git. To deploy,</p>
+<div class="highlight-bash"><div class="highlight"><pre>push <span class="o">{</span>remote<span class="o">}</span> <span class="o">{</span>env<span class="o">}</span> <span class="o">{</span>branch<span class="o">}</span>
+
+push fe prod master
+</pre></div>
+</div>
+<p>These are the options</p>
+<div class="highlight-bash"><div class="highlight"><pre>push cat prod master
+
+push cat stag master
+
+push fe prod master
+
+push fe stag master
+
+push fe beta master
+
+push calcs prod master
+
+push calcs stag master
+
+push pulls prod master
+
+push pulls stag master
+
+push feeds prod master
+
+push feeds stag master
+</pre></div>
+</div>
+<p>You can also just push a branch EVERYWHERE</p>
+<div class="highlight-bash"><div class="highlight"><pre>push.sh prod master
+</pre></div>
+</div>
+<p>Or just to the DataEngines (Calcs | Pulls | Feeds )</p>
+<div class="highlight-bash"><div class="highlight"><pre>push de-all prod master
+</pre></div>
+</div>
+<p>Depending on your system, you may need to type a ./ before push, like so</p>
+<div class="highlight-bash"><div class="highlight"><pre>./push prod master
+</pre></div>
+</div>
+<p>Composer install is run on the server after it is deployed, so thats all that text you see. The Engineering room in hipchat will be notified of your push.</p>
+</div>
+
+
+          <footer>
+  
+    <div class="rst-footer-buttons">
+      
+        <a href="docs.html" class="btn btn-neutral float-right" title="Documentation"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="installation.html" class="btn btn-neutral" title="Installation"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <p>
+      &copy; Copyright 2014, Tailwind Engineers.
+  </p>
+
+  <a href="https://www.github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="http://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+</body>
+</html>

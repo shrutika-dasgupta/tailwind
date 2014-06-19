@@ -1,0 +1,13 @@
+ul.block-grid-4 > li {
+  width: 25%;
+  float: left;
+  padding: 0 12px 12px;
+  display: block;
+  height: auto;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+ul.block-grid-4 > li:nth-of-type(4n+1) {
+  clear: left;
+}

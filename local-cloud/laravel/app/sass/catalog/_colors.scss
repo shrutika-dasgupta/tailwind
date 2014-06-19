@@ -1,0 +1,46 @@
+///Colors
+$blue-dark : #5783D7;
+$blue-light : #79A5F9;
+
+$green-dark : #48AA7F;
+$green-light : #6BCCA1;
+
+$red-dark : #8C4D48;
+$red-light : #DE6F6C;
+
+
+$text-color:#333;
+$lowlight: #F4F4F4;
+
+$fade:#BABABA;
+$dark-fade:darken($fade,10%);
+
+$primary-blue: #1092CE;
+$primary-blue-light: #2C9FD3;
+$primary-blue-lighter: #49ACD9;
+$primary-blue-lightest: #8AC9E6;
+
+$highlight-blue: rgba(22,153,204,0.8);
+$header-blue: rgba(0,174,230,0.8);
+$header-blue-full: rgba(0,174,230,1);
+
+$gold-shade-old: #FFCA60;
+$gold-shade: #F8BC44;
+$gold-light: #FFE898;
+$gold-highlight: #FDFEC2;
+$gold-highlight-shade: #FFCA60;
+
+$gold-bright-highlight: #FFF9CD;
+$gold-bright-highlight-shade: #FFCA60;
+
+.primary {
+  color:$blue-dark;
+}
+
+.secondary {
+  color:$green-dark;
+}
+
+.alternative {
+  color:$red-light;
+}

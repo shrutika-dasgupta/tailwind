@@ -1,0 +1,23 @@
+ORIGIN_BRANCH=origin/$BRANCH
+
+git fetch origin $BRANCH
+
+LOCAL_HASH=$(git log -n 1 $BRANCH --pretty=format:"%H")
+ORIGIN_HASH=$(git log -n 1 $ORIGIN_BRANCH --pretty=format:"%H")
+
+if [ "$LOCAL_HASH" == "$ORIGIN_HASH" ]
+then
+
+    HIPCHAT_COLOR='purple'
+
+    printf "%b\n" "$GREEN Woo! $BRANCH is synced with $ORIGIN_BRANCH $WHITE"
+    printf "%b\n" "$GREEN Pushing $BRANCH to $SERVER $REPO $WHITE"
+
+    git push ssh://$SSH_USER@$IP/$REMOTE_REPO $BRANCH
+
+    printf "%b" "Pushed $BRANCH to $SERVER $REPO" | ./build/deploy/hipchat_room_message -t 83e6d82387608fcd718566af0abe75 -c "$HIPCHAT_COLOR" -r 328352 -f "$HIPCHAT_USER" > /dev/null
+
+else
+    printf "%b\n" "$RED You need to push $BRANCH to $ORIGIN_BRANCH on Github first. $WHITE"
+fi
+

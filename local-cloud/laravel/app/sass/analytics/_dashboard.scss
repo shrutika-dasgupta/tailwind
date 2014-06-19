@@ -1,0 +1,247 @@
+#dashboard {
+
+  .widget {
+
+    a.out-of-face {
+      text-decoration: none;
+      color: #333333;
+    }
+    a.out-of-face:hover {
+      text-decoration: none;
+      color: #333333;
+    }
+
+    .positive, a.positive {
+      color: #549E54;
+    }
+
+    .pop {
+      color: rgba(0, 174, 230, 0.8);
+    }
+
+    .icon-graph, .icon-resistor, .icon-board, .icon-fire, .icon-users, .icon-pinterest {
+      color: #eeeeee;
+      font-size: 30px;
+      text-shadow: 0 -5px 12px #FFFFFF, 0 0 0 #000000, 1px 1px 1px rgba(255, 255, 255, 0.4);
+
+    }
+
+    a.small-text {
+      color: #666666;
+      font-size: 14px;
+      font-weight: 300;
+      margin-top: 10px;
+      text-decoration: none;
+    }
+
+    .blurb {
+      font-size: 12px;
+      line-height: normal;
+      margin: 10px 0;
+    }
+
+    .title {
+      font-size: 20px;
+      font-weight: 300;
+    }
+    a .title {
+      color:#333333;
+      text-decoration: none;
+    }
+
+    a.sub-title, .sub-title {
+      color: #666666;
+      font-size: 14px;
+      font-weight: 300;
+      margin-top: 10px;
+      text-decoration: none;
+    }
+
+    .board {
+      margin-bottom:10px;
+
+      hr {
+        margin-bottom: 10px;
+      }
+    }
+    .board-title {
+      margin: 0;
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    .metric-change {
+      color: #666666;
+      font-size: 14px;
+      font-weight: 300;
+      padding-bottom: 10px;
+    }
+
+    .neutral {
+      .feature-stat {
+        color: #666666;
+      }
+    }
+
+    a.feature-stat {
+      display: block;
+      text-decoration: none;
+
+      text-align: left;
+      padding-bottom: 0px;
+      color: #549E54;
+      font-size: 30px;
+      line-height: 30px;
+    }
+
+    .followers {
+      img {
+        display: inline;
+        height: 50px;
+        width: 50px;
+      }
+    }
+
+    .recent_comments {
+      img.pin {
+        display: inline;
+        height: 50px;
+        width: 50px;
+      }
+    }
+
+    .repinners {
+      img {
+      }
+      h5 {
+        margin-bottom: 0;
+      }
+    }
+
+    .btn {
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    h4.board_name {
+      color: #444444;
+      font-size: 12px;
+      padding: 0;
+      margin: 5px 5px 0;
+      font-weight: normal;
+    }
+
+    hr {
+      margin-bottom: 0;
+    }
+
+    .time {
+      color: #CCCCCC;
+      font-size: 12px;
+      margin-top: -6px;
+      margin-bottom: 6px;
+    }
+
+  }
+
+  .divided-large {
+    .top-people-wrap {
+      border-left: 1px solid #eeeeee;
+      padding-left: 20px;
+
+      .locked {
+        @include opacity(0.75);
+
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        z-index: 100;
+        background: #CCCCCC;
+      }
+
+      .top-people {
+        .sad-pandas {
+          margin: 30px 0;
+        }
+
+        h4 {
+          font-size: 1.1em;
+          font-weight: normal;
+          margin: 0 0 5px;
+          text-align: left;
+        }
+        img {
+          display: inline;
+          margin: 0 15px 0 0;
+          width: 40px;
+          @include border-radius();
+        }
+        h5 {
+          color: #444444;
+          font-size: 14px;
+          font-weight: normal;
+          margin: 5px 5px 0;
+          padding: 0;
+        }
+      }
+
+      .engagement {
+        font-size: 10px;
+        color: #666666;
+      }
+    }
+    .top-boards {
+      .feature-stat {
+        color: #666666;
+        font-weight: 500;
+      }
+      .board {
+        margin: 5px 0 0 0;
+        .board_name {
+          color: #666666;
+          font-weight: normal;
+          margin: 0;
+        }
+        img {
+          width: auto;
+          margin-bottom: 10px;
+        }
+      }
+      .top-board-pins {
+        margin: 10px 0 0;
+      }
+      img {
+        margin: 0;
+      }
+      .pins {
+        img {
+          display: inline;
+          max-width: 45px;
+        }
+      }
+    }
+
+  }
+
+  .accordion {
+    .pins {
+      max-height: 100px;
+      overflow: hidden;
+
+      img {
+        width: auto;
+        height: auto;
+        display: inline;
+        max-width: 50px;
+        vertical-align: top;
+      }
+    }
+
+  }
+}
+
+.small-header {
+  color: #666666;
+  font-size: 20px;
+  font-weight: 300;
+}

@@ -1,0 +1,90 @@
+#features {
+  .testimonial.feature {
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    line-height: 1.4em;
+    font-size: 13px;
+    margin: 5px;
+
+    .content {
+      line-height: 1.5em;
+      font-size: 17px;
+    }
+  }
+
+  .quotes {
+    margin-bottom: 0px;
+    padding: 30px;
+
+    .sub-features-heading {
+      margin-bottom: 30px;
+    }
+  }
+  .bottom-cta {
+    margin: 190px 0 0;
+  }
+
+  .feature {
+    h3 {
+      //margin-bottom:15px;
+      font-size: 2.3em;
+      color: #000;
+
+      .primary.highlight {
+        font-family: inherit;
+      }
+    }
+
+    h4 {
+      font-size: 30px;
+      margin-top: 0px;
+    }
+
+    .sub-features-heading.alt {
+      h4 {
+        font-size: 25px;
+      }
+    }
+
+    .learn-more a {
+      text-decoration:none;
+    }
+  }
+
+  #performance {
+    h3 {
+      font-size: 1.875em;
+    }
+
+    img {
+      margin-top: -133px;
+    }
+  }
+
+  #buzz {
+    h4 {
+      font-size: 22px;
+    }
+  }
+
+  #competitors {
+    h4 {
+      font-size: 28px;
+    }
+  }
+
+  #optimize {
+    h4 {
+
+    }
+  }
+
+  #roi {
+    h4 {
+
+    }
+  }
+
+}

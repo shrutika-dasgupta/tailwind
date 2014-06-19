@@ -1,0 +1,24 @@
+@import "retina_sprites";
+
+$sprites: sprite-map("logos/1x/*.png");
+$sprites2x: sprite-map("logos/2x/*.png");
+
+@mixin social-proof-logo { height:75px; width:75px; }
+
+.logo.aol {
+  @include retina-sprite(aol);
+  @include social-proof-logo;
+}
+
+.logo.disney {
+  @include retina-sprite(disney);
+  @include social-proof-logo;
+}
+
+.logo.pinterest {
+  @include retina-sprite(pinterest);
+  text-indent: -999px;
+  overflow: hidden;
+  height:44px;
+
+}

@@ -1,0 +1,28 @@
+.upgrade-modal {
+
+  .upgrade-modal-header {
+    border-bottom:1px solid rgba(0,0,0,0.1);
+  }
+
+  .upgrade-modal-body {
+    margin-top:15px;
+  }
+
+  h2 {
+    font-weight: 300;
+    color: #333333;
+    text-shadow: none;
+  }
+
+  .btn.main-cta {
+    margin-top:5px;
+  }
+
+  img {
+    margin-bottom:10px ;
+  }
+
+}
+.modal-footer {
+  min-height: 45px;
+}
