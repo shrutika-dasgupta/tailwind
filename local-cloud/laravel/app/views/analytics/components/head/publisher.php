@@ -1,1 +1,0 @@
-<link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/gkbhgdhhefdphpikedbinecandoigdel">

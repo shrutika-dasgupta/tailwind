@@ -1,1 +1,0 @@
-<link href="<?= $src; ?>" <?=$attributes;?> rel="stylesheet" />

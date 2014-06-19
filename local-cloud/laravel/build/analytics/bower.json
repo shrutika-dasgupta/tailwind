@@ -1,7 +1,0 @@
-{
-  "name": "Tailwind",
-  "version": "0.0.1",
-  "dependencies": {
-    "dropzone": "3.8.4"
-  }
-}
