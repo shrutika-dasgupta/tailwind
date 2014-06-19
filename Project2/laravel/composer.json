@@ -4,11 +4,7 @@
 	"keywords": ["framework", "laravel"],
 	"license": "MIT",
 	"require": {
-		"laravel/framework": "4.2.*",
-		"fieg/bayes": "dev-master",
-		"webd/stats": "dev-master",
-		"webd/vectors": "dev-master",
-		"webd/clustering": "dev-master"
+		"laravel/framework": "4.2.*"
 	},
 	"autoload": {
 		"classmap": [
