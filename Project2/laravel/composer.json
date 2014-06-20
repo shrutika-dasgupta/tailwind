@@ -8,7 +8,8 @@
 		"fieg/bayes": "dev-master",
 		"webd/stats": "dev-master",
 		"webd/vectors": "dev-master",
-		"webd/clustering": "dev-master"
+		"webd/clustering": "dev-master",
+		"twitter/bootstrap": "v3.0.0"
 	},
 	"autoload": {
 		"classmap": [

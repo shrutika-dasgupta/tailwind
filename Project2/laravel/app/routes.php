@@ -16,4 +16,4 @@ Route::get('/', function()
 	return View::make('hello');
 });
 
-Route::any('suggest',)
+Route::any('suggest','SuggestionController@suggestPins');
