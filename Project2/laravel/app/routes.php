@@ -13,7 +13,8 @@
 
 Route::get('/', function()
 {
-	return View::make(
+	return View::make('hello');
+	/*return View::make(
 		'as' => 'home',
-		'uses' => 'HomeController' );
+		'uses' => 'HomeController' );*/
 });

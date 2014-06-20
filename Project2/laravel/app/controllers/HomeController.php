@@ -14,11 +14,14 @@ class HomeController extends BaseController {
 	|	Route::get('/', 'HomeController@showWelcome');
 	|
 	*/
-
+	Route::get('/', 'HomeController@goContext');
 	public function goContext()
 	{
+		//Session::flash('allValues',$userAllValues);
+		//Redirect::to('models/contentDis');
 		//if (yes)
 		// go to Content discovery;
+		return View::make('hello');
 	}
 
 }

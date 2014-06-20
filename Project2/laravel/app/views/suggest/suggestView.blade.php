@@ -12,8 +12,11 @@
 			<div class="jumbotron">
 				<h1>Exciting New Feature Under Way!!</h1>
 				<p>Would you like suggetions regarding recent trending pins?</p>
-				<a href="#" class="btn btn-primary">Yes</a>
-				<a href="#" class="btn btn-primary">No</a>
+				@yield('content')
+				<!-- <h1>Exciting New Feature Under Way!!</h1>
+				<p>Would you like suggetions regarding recent trending pins?</p>
+				{{ Form::open(array('action' => 'HomeController@goContext'));}}
+				{{ Form::submit('Click Me!');}} -->
 			</div>
 		</div>
 	</body>	

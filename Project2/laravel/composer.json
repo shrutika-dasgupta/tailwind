@@ -16,10 +16,7 @@
 			"app/tests/TestCase.php"
 		]
 	},   
-	"require": {
-        "twitter/bootstrap": "v3.0.0"
-        },
-        
+	        
 	"scripts": {
 		"post-install-cmd": [
 			"php artisan clear-compiled",
